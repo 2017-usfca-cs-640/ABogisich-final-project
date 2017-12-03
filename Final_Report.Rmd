@@ -19,7 +19,10 @@ Frogs and salamanders are well adapted to a semi-terrestrial life, because their
 
 When operating optimally, the immune system - microbiota alliance interweaves the innate and adaptive arms of immunity in a dialogue that selects, calibrates and terminates responses in the most appropriate manner (@belkaid2014role). However, when an amphibian becomes infected with Bd, the fungus spreads and grows over the drink patch on the ventral side of the organism, clogging the pores of skin through which osmorgeulation and respiration would normally take place. Thus, the organism effectively loses it's abiity to maintatin homeostasis and it's immune system becomes increasingly compromised, allowing Bd to garner more nutrients from the host for its own life-cycle. 
 
-Symbiotic microbial communities may interact with infectious pathogens sharing a common host. The microbiome may limit pathogen infection or, conversely, an invading pathogen can disturb the microbiome. Documentation of such relationships during naturally occurring disease outbreaks is rare, and identifying causal links from field observations is difficult.
+Symbiotic microbial communities may interact with infectious pathogens sharing a common host. The microbiome may limit pathogen infection or, conversely, an invading pathogen can disturb the microbiome. Documentation of such relationships during naturally occurring disease outbreaks is rare, and identifying causal links from field observations is difficult. In this post-analysis work using Loudon et al.'s data from surveying the microbiome of *Plethodon cinereus*, the red-backed salamander..........
+
+I would hypothesize that.....should expect to see....
+
 
 # Methods
 
@@ -47,6 +50,26 @@ These are the methods you used to do your bioinformatic analyses analyses. Shoul
 # using the `load()` function. Ask me for clarification if this is
 # unclear.
 ```
+
+```{r load-libraries, message = FALSE, echo = FALSE}
+# Be sure to install these packages before running this script
+# See script 2 for more information about each package
+library("dplyr")
+library("tidyr")
+library("knitr")
+library("ggplot2")
+library("citr")
+library("dada2")
+library("seqinr")
+library("mctoolsr")
+library("phyloseq")
+# Be sure to load in the phyloseq data object created
+load("output_Rdata")
+  stopifnot(exists("output_Rdata"))
+```
+
+
+  
 
 In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 
