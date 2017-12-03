@@ -1,7 +1,7 @@
 ---
-title: "Final Report: Your Title Here"
-author: "Don Francisco"
-date: "November 22, 2017"
+title: "Final Report: Mirobiome of Red-Backed Salamanders"
+author: "Allison Bogisich"
+date: "November 27, 2017"
 output:
     github_document: default
     word_document: default
@@ -11,7 +11,15 @@ csl: bioinformatics.csl
 
 # Introduction
 
-Add about 2-3 pages here. Across the whole manuscript, you should cite at least 20 peer reviewed articles.
+Add about 2-3 pages here. Across the whole manuscript, you should cite at least 20 peer reviewed articles. One page is about 500 words.
+
+Bacterial communities which are host-associated have the potential to impact host health in many species. This is true across taxa including- but not limited to- humans (@fierer2012cross), corals (@rosenberg2007role), insects (@dillon2005diversity), and amphibians (@harris2009skin). Skin-associated bacteria of amphibians are increasingly being recognized for their defensive role against pathogens, but we still have a very narrow understanding of their basic ecological functions. The cutaneous epidermal layer itself provides a barrier against pathogens, but it is the microbial communities that reside on the skin itself which provides a better defense. Particularly of concern to herpetologists is the pathogenic fungus *Batrachochytrium dendrobatidis* (Bd), which some symbiotic cutaneous-microbacteria appear to repell (@lam2010proportion,@woodhams2007symbiotic). Bd is what causes the fungal disease chytridiomycosis, which has been a contributing factor in bringing many amphibian populations to near extinction within the past decade (@skerratt2007spread, @crawford2010epidemic).
+
+Frogs and salamanders are well adapted to a semi-terrestrial life, because their skin is covered by mucous produced by numerous mucousal glands located over their entire body. These glandular secretions help protect the skin from mechanical trauma (such as abrasions), inhibits entry of pathogens via antimicrobial secretions, and faciliates osmoregulation which occurs through the skin. This helps to maintain a proper salt and water balance within the internal organs when the amphibian is in water or on land (@dubaissi2011embryonic). These antimicrobial compounds are components of an amphibian's innate immune response and defend amphibians against bacterial and fungal infections. In addition, amphibians regularly experience skin sloughing and this regulates the population of skin microorganisms (@cramp2014first). To ensure the continued integrity of the skin surface, vertebrates undergo a skin-renewal process called moulting, or desquamation, whereby the outer stratum of the skin separates from the underlying skin layers and is lost to the environment. Unlike many other vertebrates, in which skin cells are cast off individually or in small patches, amphibians (including anurans, urodeles and caecilians) undergo a more cyclic moulting process whereby an entire stratum of skin is shed each timAt every episode of sloughing, the skin microbiome population becomes reduced and returns to a basic level. Thus, risks of dysbiosis events on the skin are reduced. Since many amphibians eat their skin, it is possible that a complex cycle is established between the skin and the gut microbiome.
+
+When operating optimally, the immune system - microbiota alliance interweaves the innate and adaptive arms of immunity in a dialogue that selects, calibrates and terminates responses in the most appropriate manner (@belkaid2014role). However, when an amphibian becomes infected with Bd, the fungus spreads and grows over the drink patch on the ventral side of the organism, clogging the pores of skin through which osmorgeulation and respiration would normally take place. Thus, the organism effectively loses it's abiity to maintatin homeostasis and it's immune system becomes increasingly compromised, allowing Bd to garner more nutrients from the host for its own life-cycle. 
+
+Symbiotic microbial communities may interact with infectious pathogens sharing a common host. The microbiome may limit pathogen infection or, conversely, an invading pathogen can disturb the microbiome. Documentation of such relationships during naturally occurring disease outbreaks is rare, and identifying causal links from field observations is difficult.
 
 # Methods
 
