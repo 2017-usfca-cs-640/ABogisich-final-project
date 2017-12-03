@@ -229,4 +229,4 @@ phyloseq_obj <- phyloseq(otu_table(sequence_table_nochim,
                          tax_table(taxa)) # taxonomy for each sequence variant
 
 save(phyloseq_obj,
-     file = "output.Rdata")
+     file = "output_Rdata")
