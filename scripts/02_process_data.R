@@ -219,7 +219,7 @@ metadata_in <- read.table(paste0("data/metadata/",
                           sep = "\t",
                           header = TRUE,
                           stringsAsFactors = FALSE,
-                          row.names = 6) # sets sample IDs to row names
+                          row.names = 8) # sets sample IDs to row names
 
 
 # Construct phyloseq object (straightforward from dada2 outputs)
