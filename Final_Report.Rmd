@@ -74,12 +74,12 @@ stopifnot(exists("phyloseq_obj"))
 # in the most highly expressed
 # alpha diversity metrics, create subset
 salamander_subset_obj <- subset_samples(phyloseq_obj,
-                                    organism_s != "soil metagenome")
-# plot alpha diversity of sebum samples
+                                    Organism_s != "soil metagenome")
+# plot alpha diversity of mucus samples
 plot_richness(salamander_subset_obj,
-                x = "env_material_s",
+                x = "env_biome_s",
                 measures = c("Shannon", "Simpson"),
-                color = "sample_site_s") +
+                color = "description_s") +
     xlab("Sample Origin") +
     geom_jitter(width = 0.2) +
     theme_bw()
