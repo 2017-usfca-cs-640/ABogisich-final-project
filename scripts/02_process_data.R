@@ -219,7 +219,7 @@ export_taxa_table_and_seqs(sequence_table_nochim,
 # and the `stringsAsFactors = FALSE` tells it not to assume that things are
 # categorical variables
 metadata_in <- read.table(paste0("data/metadata/",
-                                 "loudon_microbial_community_salamanders_SRARunTable.txt"),
+                     "loudon_microbial_community_salamanders_SRARunTable.txt"),
                           sep = "\t",
                           header = TRUE,
                           stringsAsFactors = FALSE,
