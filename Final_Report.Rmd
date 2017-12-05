@@ -98,6 +98,7 @@ plot_richness(salamander_subset_obj,
 ```
 **Figure 1**: Alpha diversity measure of the bacterial community diversity on individual salamanders.
 
+By using the Shannon and Simpson diversity indexes, I have plotted the mean microbial species diversity in samples at a the level of an individual salamander. This also includes sampling from a control environment in which we'd expect little to no diversity as well as water samples that were sampled for comparison and a point of reference. The majority of red data points -which indicate female sebum samples- are generally clustering more at the upper half of both diversity indexes, with a few outliers farther down the diversity scale. Conversely, the blue male data points are largely clustering in the lower half of the scale for alpha diversity in both indexes. 
 
 
 ```{r make-soil-alpha-diversity-plot}
