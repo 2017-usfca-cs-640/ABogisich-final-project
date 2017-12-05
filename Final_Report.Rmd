@@ -112,7 +112,7 @@ plot_richness(soil_subset_obj,
                 color = "description_s") +
     xlab("Sample Origin") +
     geom_jitter(width = 0.2) +
-    theme_bw()+ ggtitle(" Soil Alpha Diversity Across Substrates")
+    theme_bw() + ggtitle(" Soil Alpha Diversity Across Substrates")
 ```  
 **Figure 2**: Alpha diversity measure of the bacterial community diversity across substrate media.
 
@@ -142,7 +142,27 @@ top_bacteria %>%
 
 
 
+```{r barplot-of-bacterial-profile, echo = FALSE}
+# create subset with only salamander bacteria
+salamander_bacteria_obj <- melted_obj %>%
+  filter(grepl("organismal metagenomes", Organism_s)) %>%
+  group_by(Phylum, Class, Order, Genus, treatment_description_s) %>%
+  summarize(sum_count = sum(Abundance)) %>%
+  arrange(desc(sum_count)) %>%
+  head(n = 40)
 
+
+# this code uses the same data as above, but use it to make a
+# barplot
+salamander_bacteria_obj %>%
+  ggplot(aes(x = treatment_description_s,
+             y = sum_count,
+             fill = Class)) +
+  geom_col(position = "dodge") +
+  ggtitle(" Microbe Class Diversity Across Time in Salamanders")
+
+```
+**Figure 3**:
 
 
 
