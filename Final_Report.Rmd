@@ -144,14 +144,14 @@ top_bacteria %>%
 
 
 
-```{r barplot-of-bacterial-profile, echo = FALSE}
+```{r barplot-of-salamander-bacterial-profile, echo = FALSE}
 # create subset with only salamander bacteria
 salamander_bacteria_obj <- melted_obj %>%
   filter(grepl("organismal metagenomes", Organism_s)) %>%
   group_by(Phylum, Class, Order, Genus, treatment_description_s) %>%
   summarize(sum_count = sum(Abundance)) %>%
   arrange(desc(sum_count)) %>%
-  head(n = 40)
+  head(n = 50)
 
 
 # this code uses the same data as above, but use it to make a
@@ -165,7 +165,32 @@ salamander_bacteria_obj %>%
   ggtitle(" Microbe Class Diversity Across Time in Salamanders")
 
 ```
-**Figure 3**:
+**Figure 3**: Presence of microbial classes on salamanders over time in both experimental conditions.
+
+```{r barplot-of-soil-bacterial-profile, echo = FALSE}
+# create subset with only salamander bacteria
+soil_bacteria_obj <- melted_obj %>%
+  filter(grepl("soil metagenome", Organism_s)) %>%
+  group_by(Phylum, Class, Order, Genus, treatment_description_s) %>%
+  summarize(sum_count = sum(Abundance)) %>%
+  arrange(desc(sum_count)) %>%
+  head(n = 50)
+
+
+# this code uses the same data as above, but uses it to 
+# make a barplot
+soil_bacteria_obj %>%
+  ggplot(aes(x = treatment_description_s,
+             y = sum_count,
+             fill = Class)) +
+  geom_col(position = "dodge") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+  ggtitle(" Microbe Class Diversity Across Time in Soil")
+
+```
+**Figure 4**: Presence of mircobial classes over time in soil.
+
+
 
 
 
