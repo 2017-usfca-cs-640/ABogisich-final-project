@@ -124,7 +124,6 @@ plot_richness(soil_subset_obj,
 # have to filter it out as a subset from final_table
 # using psmelt to combine taxa with abundance levels
 melted_obj <- psmelt(phyloseq_obj)
-save(melted_obj, file = "output/melted_obj.Rdata")
 
 # once object is created I can create top 15 list
 top_bacteria <- melted_obj %>%
@@ -133,8 +132,13 @@ top_bacteria <- melted_obj %>%
  arrange(desc(sum_count)) %>%
  head(15)
 
-```
+# then we can use the `kable()` function to make a nicely formatted
+# markdown table
+top_bacteria %>%
+ kable()
 
+```
+**Table 1**: The top 15 most abundant bacteria across all salamander and soil samples.
 
 
 
