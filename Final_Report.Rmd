@@ -92,7 +92,9 @@ plot_richness(salamander_subset_obj,
                 color = "description_s") +
     xlab("Sample Origin") +
     geom_jitter(width = 0.2) +
-    theme_bw()+ ggtitle(" Salamander Micriobiota Alpha Diversity Across Substrates")
+    theme_bw() + 
+    ggtitle(" Salamander Micriobiota Alpha Diversity Across Substrates") +
+    theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
 ```
 **Figure 1**: Alpha diversity measure of the bacterial community diversity on individual salamanders.
 
@@ -159,6 +161,7 @@ salamander_bacteria_obj %>%
              y = sum_count,
              fill = Class)) +
   geom_col(position = "dodge") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
   ggtitle(" Microbe Class Diversity Across Time in Salamanders")
 
 ```
@@ -190,9 +193,11 @@ Add around 3-4 pages interpreting your results and considering future directions
 
 ...frog skin contains natural substances that could be the basis for a powerful new genre of antibiotics.
 ...allies in humanity’s battle with antibiotic-resistant infections that threaten millions of people worldwide.
-...been around 300 million years, so they’ve had plenty of time to learn how to defend themselves against disease-causing microbes in the environment. Their own environment includes polluted waterways where strong defenses against pathogens are a must
+...been around 300 million years, so they’ve had plenty of time to learn how to defend themselves against disease-causing microbes in the environment. Their own environment includes polluted waterways where strong defenses against pathogens are a must [@colombo2015microbiota].
 
+.....n all-D-enantiomer is nearly inactive against Gram-negative bacteria and some Gram-positive strains but is fully active against fungi and other Gram-positive bacteria, suggesting that more than one mechanism accounts for the antimicrobial activity of this peptide [@fehlbaum1996structure].
 
 "One substance isolated from the skin secretions of the Foothill Yellow-legged Frog — a species once common in California and Oregon but now facing extinction — shows promise for killing methicillin-resistant Staphylococcus aureus (MRSA) bacteria. MRSA is a “superbug,” infamous for causing deadly outbreaks of infection among hospitalized patients. Now it is occurring in settings outside hospitals, including schools, nursing homes, and day care centers." [@conlon2014potential]
+
 
 # Sources Cited
