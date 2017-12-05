@@ -60,7 +60,9 @@ filenames_forward_reads <- file.path(path, filenames_forward_reads)
 plotQualityProfile(filenames_forward_reads[1:10])
 
 
-#We can see from the quality profiles that most reads tend to get pretty bad in quality after around 200 bases. Therefore, we decided to set a maximum acceptable sequence length of 225 bases.
+#We can see from the quality profiles that most reads tend to get pretty bad
+#in quality after around 200 bases. Therefore, we decided to set a maximum
+#acceptable sequence length of 225 bases.
 
 # r filter-reads
 # Place filtered files in filtered/ subdirectory
@@ -127,7 +129,9 @@ dada_forward_reads
 sequence_table <- makeSequenceTable(dada_forward_reads)
 
 
-# The output table has `r nrow(sequence_table)` rows (samples) and `r ncol(sequence_table)` columns (sequence variants). Notice how we can embed R code directly in our markdown text.
+# The output table has `r nrow(sequence_table)` rows (samples) and
+#`r ncol(sequence_table)` columns (sequence variants). Notice how we can
+#embed R code directly in our markdown text.
 
 # r histogram-of-sequence-lengths
 # Quick check to look at distribution of trimmed and denoised sequences

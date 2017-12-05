@@ -50,6 +50,7 @@ Raw data were sorted for order and samples were extracted with their appropriate
 # Results
 
 ## Subsections are ok in the results section too
+In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 
 ```{r your-code-here}
 # Add code chunks as needed for your analyses
@@ -77,7 +78,7 @@ load("output/phyloseq_obj.RData")
 stopifnot(exists("phyloseq_obj"))
 ```
 
-```{r make-alpha-diversity-plot}
+```{r make-salamander-alpha-diversity-plot}
 # There are many many genes in this dataset, so we can
 # subset it down to just a few here to look for interesting patterns
 # in the most highly expressed
@@ -91,17 +92,73 @@ plot_richness(salamander_subset_obj,
                 color = "description_s") +
     xlab("Sample Origin") +
     geom_jitter(width = 0.2) +
-    theme_bw()+ ggtitle("Alpha Diversity Across Substrates")
+    theme_bw()+ ggtitle(" Salamander Micriobiota Alpha Diversity Across Substrates")
 ```
-**Figure 1**: Alpha diversity measures the bacterial community diversity on individual salamanders.
+**Figure 1**: Alpha diversity measure of the bacterial community diversity on individual salamanders.
 
-  
 
-In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
+
+```{r make-soil-alpha-diversity-plot}
+# There are many many genes in this dataset, so we can
+# subset it down to just a few here to look for interesting patterns
+# in the most highly expressed
+# alpha diversity metrics, create subset
+soil_subset_obj <- subset_samples(phyloseq_obj,
+                                    Organism_s != "organismal metagenomes")
+# plot alpha diversity of soil samples
+plot_richness(soil_subset_obj,
+                x = "env_biome_s",
+                measures = c("Shannon", "Simpson"),
+                color = "description_s") +
+    xlab("Sample Origin") +
+    geom_jitter(width = 0.2) +
+    theme_bw()+ ggtitle(" Soil Alpha Diversity Across Substrates")
+```  
+**Figure 2**: Alpha diversity measure of the bacterial community diversity across substrate media.
+
+
+
+```{r top-15-core-community-bacteria}
+# here I want to pull out just the top 15 types
+# of bacterium that were persistant
+# have to filter it out as a subset from final_table
+# using psmelt to combine taxa with abundance levels
+melted_obj <- psmelt(phyloseq_obj)
+save(melted_obj, file = "output/melted_obj.Rdata")
+
+# once object is created I can create top 15 list
+top_bacteria <- melted_obj %>%
+ group_by(Phylum, Class) %>%
+ summarize(sum_count = sum(Abundance)) %>%
+ arrange(desc(sum_count)) %>%
+ head(15)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Discussion
 
-Lead with the finding and then just write (Figure. #).....
+.....Lead with the finding and then just write (Figure. #).....
 
 Add around 3-4 pages interpreting your results and considering future directions one might take in analyzing these data.
 
