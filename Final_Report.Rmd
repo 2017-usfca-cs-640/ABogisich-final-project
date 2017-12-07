@@ -212,7 +212,7 @@ relatively minor disturbances, such as skin sloughing (Meyer et al., 2012), whic
 experiment in the laboratory, do not affect diversity if a bacterial reservoir is available. In the field, there was no correlation between alpha diversity of salamanders’ skin microbiota and
 the microbiota of the salamanders’ immediate habitat upon capture in the field.
 Thus, even though their microbes are environmentally derived, salamander skin communities are
-not determined solely by passive inoculation. Rather, host factors appear to select for and
+not determined solely by passive inoculation. Rather, host factors appear to be selected for and
 maintain host-associated microbes at similar relative abundance over time. The same pattern has been
 found in humpback whales and has been suggested to occur in amphibian larvae (Apprill et al., 2011).
 
