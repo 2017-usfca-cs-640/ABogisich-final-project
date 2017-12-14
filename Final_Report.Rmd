@@ -152,6 +152,8 @@ salamander_bacteria_obj %>%
   ggtitle(" Microbe Class Diversity Across Time in Salamanders")
 
 ```
+
+
 **Figure 3**: Presence of microbial classes on salamanders over time in both experimental conditions.
 
 In order to compare the microbial communities found on the salamanders over a period of four weeks, I broke it down by representative classes. For the salamanders in the media treatment, the majority of the classes of bacteria present during the initial collection were still present on the sampled salamanders even almost month later in sterile conditions. Gammaproteobacteria, Sphingobacteriia, and Actinobacteria were the core community. The greatest variety of bacterial classes were found on the initial day of sampling. In the soil treated salamanders, there also appears to be the most class diversity on the day of collection. However, by day 28 only one sequence matched type of bacteria remained- Acidobacteria_Grp2. The sum count for the bacteria taxa were quite small overall for both experimental groups of salamanders.
@@ -176,6 +178,8 @@ soil_bacteria_obj %>%
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
   ggtitle(" Microbe Class Diversity Across Time in Soil")
 ```
+
+
 **Figure 4**: Presence of microbial classes over time in soil.
 
 When analyzing the relative amounts of bacterial classes present in the soil tested over time, there are much larger summation values for the classes. Counts ranged anywhere from 13,000 at the lowest to nearly a million at the highest for soil samples. While the field soil distribution had quite a large diversity of microbial classes (seven identified), samples from day zero in the lab dropped down to just one class- Acidobactera_Grp2. However, then when sampled in the subsequent weeks the soil regained a great deal of microbial diversity which persisted till the end of the study. Weeks two and four had samples that both exhibited essentially equivalent amounts of the ten identified classes present. Acidobactera_Grp2 and Grp1 consistently exhibited the greatest abundance in the sampled soils once in the laboratory setting.
