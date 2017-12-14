@@ -3,8 +3,8 @@ title: "Final Report: Microbiome Stability of Red-Backed Salamanders"
 author: "Allison Bogisich"
 date: "November 27, 2017"
 output:
-    github_document: default
     word_document: default
+    github_document: default
 bibliography: references.bib
 csl: bioinformatics.csl
 ---
@@ -57,7 +57,7 @@ load("output/phyloseq_obj.RData")
 stopifnot(exists("phyloseq_obj"))
 ```
 
-```{r make-salamander-alpha-diversity-plot, message = FALSE, message = FALSE, warning = FALSE}
+```{r make-salamander-alpha-diversity-plot, echo = FALSE, message = FALSE, warning = FALSE}
 # There are many many genes in this dataset, so we can
 # subset it down to just a few here to look for interesting patterns
 # in the most highly expressed
@@ -72,7 +72,7 @@ plot_richness(salamander_subset_obj,
     xlab("Sample Origin") +
     geom_jitter(width = 0.2) +
     theme_bw() +
-    ggtitle(" Salamander Micriobiota Alpha Diversity Across Substrates") +
+    ggtitle(" Salamander Microbiota Alpha Diversity Across Substrates") +
     theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
 ```
 
