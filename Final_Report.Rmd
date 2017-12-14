@@ -1,5 +1,5 @@
 ---
-title: "Final Report: Mirobiome Stability of Red-Backed Salamanders"
+title: "Final Report: Microbiome Stability of Red-Backed Salamanders"
 author: "Allison Bogisich"
 date: "November 27, 2017"
 output:
