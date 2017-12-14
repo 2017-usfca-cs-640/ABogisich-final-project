@@ -40,7 +40,7 @@ Raw data were sorted for order and samples were extracted with their appropriate
 
 # Results
 
-```{r load-libraries, message = FALSE, echo = FALSE}
+```{r load-libraries, message = FALSE, echo = FALSE, message = FALSE, warning = FALSE}
 # Be sure to install these packages before running this script
 # See script 2 for more information about each package
 library("dplyr")
@@ -57,7 +57,7 @@ load("output/phyloseq_obj.RData")
 stopifnot(exists("phyloseq_obj"))
 ```
 
-```{r make-salamander-alpha-diversity-plot}
+```{r make-salamander-alpha-diversity-plot, message = FALSE, message = FALSE, warning = FALSE}
 # There are many many genes in this dataset, so we can
 # subset it down to just a few here to look for interesting patterns
 # in the most highly expressed
@@ -75,12 +75,13 @@ plot_richness(salamander_subset_obj,
     ggtitle(" Salamander Micriobiota Alpha Diversity Across Substrates") +
     theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
 ```
+
 **Figure 1**: Alpha diversity measure of the bacterial community diversity on individual salamanders.
 
 By using the Shannon and Simpson diversity indexes, I have plotted the mean microbial species diversity in samples at the level of an individual salamander. This also includes sampling from a control environment in which we'd expect to see no diversity as well as water samples that were collected from salamanders which were initially taken from an aquatic habitat in the field. The green data points indicate samples from salamanders in the sterile media treatment group that were without a bacterial reservoir in the lab. The teal points are from samples taken from salamanders which were provided with soil and its associated bacterial reservoir from their natural habitat. Some of the control samples appear to have a high amount of diversity while others have none in the Shannon index, but all display alpha diversity in the Simpson index. The alpha diversity distribution among salamander samples appears to be fairly heterogeneous. In both treatment groups there were samples that had low and high diversity measures across both indexes. For the aquatic biome sampling, the alpha diversity remained relatively high across both indexes. 
 
 
-```{r make-substrate-alpha-diversity-plot}
+```{r make-substrate-alpha-diversity-plot, echo = FALSE, message = FALSE, warning = FALSE}
 # There are many many genes in this dataset, so we can
 # subset it down to just a few here to look for interesting patterns
 # in the most highly expressed
@@ -98,12 +99,13 @@ plot_richness(soil_subset_obj,
     theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) +
     ggtitle("Substrate Alpha Diversity Across Conditions")
 ```  
+
 **Figure 2**: Alpha diversity measure of the bacterial community diversity across substrate media.
 
 The breakdown of the alpha diversity of substrate sampling looks a little bit different from that of the salamander alpha diversity. Similarly we can see that the controls for substrate also had contaminants and exhibited a measure of diversity. Lab soils were broken down into two separate descriptions due to an typo during the cataloging of the data with the lack of capitalization of the "s" in "soil". However, we can still see that the alpha diversity of the lab soils from the treatment group with the bacterial reservoir did indeed have higher alpha diversity than that of the non-reservoir treatment group of salamanders in media. Both the field and lab soils had almost six times as much bacterial alpha diversity relative to the sterile media in the Shannon index, and 0.5 times as much according to the Simpson index. The water tested from the aquatic biome fell in the middle of distribution for alpha diversity in the Shannon index, with greater diversity than the sterile media but less than the field lab tested soils. In the Simpson index, the difference in alpha diversity between water and soils is less pronounced.
 
 
-```{r top-15-core-community-bacteria}
+```{r top-15-core-community-bacteria, echo = FALSE, message = FALSE, warning = FALSE}
 # here I want to pull out just the top 15 types
 # of bacterium that were persistant
 # have to filter it out as a subset from final_table
@@ -123,12 +125,13 @@ top_bacteria %>%
  kable()
 
 ```
+
 **Table 1**: The top 15 most abundant bacteria across all salamander and substrate samples.
 
 While the most abundant sequence identified did not have a matching known bacterial sequence, the rest of the top fourteen display the most common bacterial phylum and associated classes. These were the most prolific taxa across both sampled skin swabs from salamanders and also from sampled substrates. The most common phyla were Proteobacteria which took five of the fifteen spots for greatest abundance. Actino- and Acidobacterium were also well represented with 1:3 respectively. Bacteriodetes and Verrucomicrobia were the remaining phyla represented. The most common classes for the respective phyla did not show much of a trend, although there were three taxonomic groupings of the class Acidobacteria which were prominent.
 
 
-```{r barplot-of-salamander-bacterial-profile, echo = FALSE}
+```{r barplot-of-salamander-bacterial-profile, echo = FALSE, message = FALSE, warning = FALSE}
 # create subset with only salamander bacteria
 salamander_bacteria_obj <- melted_obj %>%
   filter(grepl("organismal metagenomes", Organism_s)) %>%
@@ -145,7 +148,7 @@ salamander_bacteria_obj %>%
              y = sum_count,
              fill = Class)) +
   geom_col(position = "dodge") +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
   ggtitle(" Microbe Class Diversity Across Time in Salamanders")
 
 ```
@@ -153,7 +156,7 @@ salamander_bacteria_obj %>%
 
 In order to compare the microbial communities found on the salamanders over a period of four weeks, I broke it down by representative classes. For the salamanders in the media treatment, the majority of the classes of bacteria present during the initial collection were still present on the sampled salamanders even almost month later in sterile conditions. Gammaproteobacteria, Sphingobacteriia, and Actinobacteria were the core community. The greatest variety of bacterial classes were found on the initial day of sampling. In the soil treated salamanders, there also appears to be the most class diversity on the day of collection. However, by day 28 only one sequence matched type of bacteria remained- Acidobacteria_Grp2. The sum count for the bacteria taxa were quite small overall for both experimental groups of salamanders.
 
-```{r barplot-of-soil-bacterial-profile, echo = FALSE}
+```{r barplot-of-soil-bacterial-profile, echo = FALSE, message = FALSE, warning = FALSE}
 # create subset with only salamander bacteria
 soil_bacteria_obj <- melted_obj %>%
   filter(grepl("soil metagenome", Organism_s)) %>%
@@ -170,7 +173,7 @@ soil_bacteria_obj %>%
              y = sum_count,
              fill = Class)) +
   geom_col(position = "dodge") +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
   ggtitle(" Microbe Class Diversity Across Time in Soil")
 ```
 **Figure 4**: Presence of microbial classes over time in soil.
